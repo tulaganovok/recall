@@ -1,11 +1,11 @@
 import { z } from 'zod'
 
 export const urlFormSchema = z.object({
-  url: z.string().url(),
+  url: z.url(),
 })
 
 export const bulkFormSchema = z.object({
-  url: z.string().url(),
+  url: z.url(),
   search: z.string(),
 })
 
@@ -15,5 +15,5 @@ export const extractSchema = z.object({
 })
 
 export const bulkUrlsSchema = z.object({
-  urls: z.array(z.string().url()),
+  urls: z.array(z.url()),
 })

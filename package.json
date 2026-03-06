@@ -9,8 +9,6 @@
     "dev": "vite dev --port 3000",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && wrangler deploy",
-    "cf-typegen": "wrangler types",
     "test": "vitest run",
     "lint": "eslint",
     "format": "prettier --check .",
@@ -68,6 +66,7 @@
     "@content-collections/markdown": "^0.1.4",
     "@content-collections/mdx": "^0.1.2",
     "@content-collections/vite": "^0.2.8",
+    "@netlify/vite-plugin-tanstack-start": "^1.2.18",
     "@tailwindcss/typography": "^0.5.16",
     "@tanstack/devtools-vite": "^0.3.11",
     "@tanstack/eslint-config": "^0.3.0",
@@ -87,6 +86,6 @@
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.5",
     "wrangler": "^4.70.0",
-    "zod": "^3.25.76"
+    "zod": "^4.3.6"
   }
 }

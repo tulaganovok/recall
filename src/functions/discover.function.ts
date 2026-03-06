@@ -27,7 +27,7 @@ export const bulkScrapeUrlsFn = createServerFn({ method: 'POST' })
   .middleware([authFnMiddleware])
   .inputValidator(
     z.object({
-      urls: z.array(z.string().url()),
+      urls: z.array(z.url()),
     }),
   )
   .handler(async function* ({ data, context }) {

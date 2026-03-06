@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 export const itemsSearchSchema = z.object({
   query: z.string().default(''),
-  status: z.union([z.literal('all'), z.nativeEnum(ItemStatus)]).default('all'),
+  status: z.union([z.literal('all'), z.enum(ItemStatus)]).default('all'),
 })
 
 export const itemIdSchema = z.object({
