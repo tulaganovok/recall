@@ -48,7 +48,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
 
-          {isPending ? null : session ? (
+          {isPending ? null : session?.user ? (
             <>
               <Button
                 variant={'outline'}

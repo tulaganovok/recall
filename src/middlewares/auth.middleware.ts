@@ -16,13 +16,16 @@ export const authFnMiddleware = createMiddleware({ type: 'function' }).server(
 
 export const authReqMiddleware = createMiddleware({ type: 'request' }).server(
   async ({ pathname, next }) => {
-    if (!pathname.startsWith('/dashboard') && !pathname.startsWith('/api'))
+    if (!pathname.startsWith('/dashboard')) {
       return next()
+    }
 
     const headers = getRequestHeaders()
     const session = await auth.api.getSession({ headers })
 
-    if (!session) throw redirect({ to: '/sign-in' })
+    if (!session) {
+      throw redirect({ to: '/sign-in' })
+    }
 
     return next({ context: { session } })
   },
